@@ -1,0 +1,48 @@
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3%;
+    min-width: 40%;
+    min-height: 6vh;
+    padding: 0 1rem; 
+}
+
+.search-category {
+    flex: 1;
+    min-height: 4vh;
+    font-size: 1.1em;
+    text-align: center;
+    border: 1px solid #606c38;
+    border-radius: 8px;
+    color: #606c38;
+    padding: 0.5rem; 
+    transition: border-color 0.3s ease; 
+}
+
+.search-category:focus {
+    outline: none; 
+    border-color: #bc6c25;
+}
+
+@media (max-width: 768px) {
+    .search-container {
+        min-width: 80%; 
+    }
+
+    .search-category {
+        font-size: 1em; 
+    }
+}
+
+@media (max-width: 480px) {
+    .search-container {
+        min-width: 90%;
+        flex-direction: column; 
+    }
+
+    .search-category {
+        font-size: 0.9em; 
+        min-height: 5vh; 
+    }
+}

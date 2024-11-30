@@ -1,0 +1,162 @@
+.display-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border-radius: 20px;
+    height: auto; 
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.display-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fefae0;
+    border: 2px solid #bc6c25;
+    width: 100%; 
+    max-width: 600px; 
+    margin-top: 18px;
+    padding: 15px;
+    gap: 10px;
+    border-radius: 13px;
+    min-height: 80px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    list-style: none;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.shopping-list-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: #fefae0;
+    font-size: 1.1em;
+}
+
+.functional-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.update-btn,
+.checkout-btn,
+.delete-btn {
+    min-width: 80px;
+    min-height: 30px;
+    border-radius: 7px;
+    border: none;
+    color: #fefae0;
+    transition: all 0.2s ease;
+}
+
+.update-btn {
+    background-color: #396901;
+}
+
+.update-btn:hover {
+    background-color: #3e8e41;
+    font-size: 1.1em;
+}
+
+.checkout-btn {
+    background-color: #18200f;
+}
+
+.checkout-btn:hover {
+    background-color: #1a1a1a;
+    font-size: 1.1em;
+}
+
+.delete-btn {
+    background-color: #d60000;
+}
+
+.delete-btn:hover {
+    background-color: red;
+    font-size: 1.1em;
+}
+
+@media (max-width: 768px) {
+    .display {
+        height: auto; 
+    }
+
+    .display-box {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+
+    .functional-button {
+        flex-direction: row; 
+        justify-content: end; 
+        width: 100%;
+    }
+
+    li {
+        font-size: 1em; 
+    }
+
+    .update-btn, .checkout-btn, .delete-btn {
+        min-width: 70px;
+        min-height: 28px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .display-box {
+        padding: 10px; 
+    }
+
+    li {
+        font-size: 0.9em; 
+    }
+
+    .update-btn, .checkout-btn, .delete-btn {
+        min-width: 60px; 
+        min-height: 26px;
+    }
+}
+
+
+  .category-filters {
+    margin: 20px 0;
+  }
+  
+  .category-tag {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border: 1px solid #283618;
+    border-radius: 13px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .category-tag.active {
+    background-color: #283618;
+    color: white;
+  }
+  
+  
