@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { addUser } from "../redux/UserAuthenticationReducer";
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
+import Swal from "sweetalert2";
 
 function Register() {
   const [username, setUsername] = useState("");
