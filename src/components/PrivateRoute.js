@@ -10,7 +10,7 @@ const PrivateRoute = ({ isAuthenticated, children }) => {
       icon: "warning",
       confirmButtonText: "OK",
     });
-    return <Navigate to="/login" />;
+    return <Navigate to="/" />;
   }
   return children;
 };

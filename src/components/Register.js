@@ -57,7 +57,7 @@ function Register() {
 
       Swal.fire({
         title: "Registration Successful!",
-        text: "You have successfully registered.",
+        text: "You have successfully registered.Now proceed to login.",
         icon: "success",
         confirmButtonText: "Login",
       }).then(() => {
