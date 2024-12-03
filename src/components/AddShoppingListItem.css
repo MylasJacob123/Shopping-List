@@ -1,98 +1,157 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  .add {
-    background-color: #fefae0;
-    border: 2px solid #bc6c25;
-    border-radius: 0.625rem;
-    padding: 1.25rem;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-    max-width: 45rem; 
-    width: 90%; 
-    margin: 1.25rem auto;
-    display: flex;
-    flex-direction: column;
-    gap: 0.9375rem;
-  }
-  
-  .shopping-list-title {
-    font-size: 2.5em;
-    color: #bc6c25;
-    font-weight: 450;
-    margin-bottom: 0.9375rem;
-  }
-  
+.view-switcher {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.7rem;
+}
+
+.add {
+  background-color: #fefae0;
+  border: 2px solid #bc6c25;
+  border-radius: 0.625rem;
+  padding: 1.25rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  max-width: 55rem;
+  width: 100%;
+  margin: 1.25rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem;
+}
+
+.shopping-list-title {
+  font-size: 2.5em;
+  color: #bc6c25;
+  font-weight: 450;
+  margin-bottom: 0.9375rem;
+}
+
+.shopping-list-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding: 1rem;
+}
+
+.shopping-list-inputs {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-div label {
+  color: black;
+  margin-bottom: 0.3125rem;
+}
+
+.shopping-list-inputs {
+  padding: 0.625rem;
+  border: 1px solid #bc6c25;
+  border-radius: 0.3125rem;
+  resize: vertical;
+  min-height: 3rem;
+  font-size: 1rem;
+}
+
+select,
+textarea {
+  padding: 0.625rem;
+  border: 1px solid #bc6c25;
+  border-radius: 0.3125rem;
+  resize: vertical;
+  min-height: 3.75rem;
+  font-size: 1rem;
+}
+
+textarea:focus,
+input[type="number"]:focus,
+input[type="text"]:focus,
+select:focus {
+  border-color: goldenrod;
+  outline: none;
+}
+
+button.shopping-list-submit-btn {
+  background-color: #283618;
+  color: white;
+  padding: 0.625rem;
+  border: none;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+button.shopping-list-submit-btn:hover {
+  background-color: #e6a800;
+}
+
+.error-message {
+  color: red;
+  margin-top: 0.5rem;
+}
+
+.view-btns {
+  font-size: 1.2rem;
+  font-weight: lighter;
+  border-radius: 0.3125rem;
+  padding: 0.525rem;
+  border: none;
+  color: white;
+  background-color: #bc6c25;
+}
+
+.view-btns:hover {
+  background-color: #bc6b25c0;
+}
+
+.view-btns.active {
+  background-color: #bc6b25c0; 
+  color: #fff;
+  font-weight: bold; 
+  border: 2px solid goldenrod; 
+}
+
+button.share-button {
+  background-color: #bc6c25;
+  color: white;
+  border: none;
+  border-radius: 0.3125rem;
+}
+
+.search-sort-container {
+  margin: 1.25rem auto;
+}
+
+button.share-button:hover {
+  background-color: goldenrod;
+}
+
+.search-sort-sub-container01 {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+@media (max-width: 768px) {
   .shopping-list-form {
-    display: flex;
-    flex-direction: row; 
-    flex-wrap: wrap; 
-    gap: 1.25rem;
-  }
-  
-  .shopping-list-inputs {
-    flex: 1 1 100%; 
-    display: flex;
     flex-direction: column;
-    gap: 1rem; 
-  }
-  
-  .form-div {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-div label {
-    color: black;
-    margin-bottom: 0.3125rem;
-  }
-  
-  .shopping-list-inputs {
-    padding: 0.625rem;
-    border: 1px solid #bc6c25;
-    border-radius: 0.3125rem;
-    resize: vertical;
-    min-height: 3rem;
-    font-size: 1rem;
   }
 
-  select,
-  textarea {
-    padding: 0.625rem;
-    border: 1px solid #bc6c25;
-    border-radius: 0.3125rem;
-    resize: vertical;
-    min-height: 3.75rem;
-    font-size: 1rem;
+  .shopping-list-inputs {
+    flex: 1 1 auto;
   }
-  
-  textarea:focus,
-  input[type="number"]:focus,
-  input[type="text"]:focus,
-  select:focus {
-    border-color: goldenrod;
-    outline: none;
-  }
-  
-  button.shopping-list-submit-btn {
-    background-color: #283618;
-    color: white;
-    padding: 0.625rem;
-    border: none;
-    border-radius: 0.3125rem;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
-  }
-  
-  button.shopping-list-submit-btn:hover {
-    background-color: #e6a800;
-  }
-  
-  .error-message {
-    color: red;
-    margin-top: 0.5rem;
-  }
+}

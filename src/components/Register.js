@@ -49,15 +49,26 @@ function Register() {
         username,
         age,
         email,
-        password
+        password,
       };
 
       dispatch(addUser(user));
 
-      console.log("Registered User:", user);
-
-      alert("Registration Successful");
-      navigate("/add");
+      Swal.fire({
+        title: "Registration Successful!",
+        text: "You have successfully registered.",
+        icon: "success",
+        confirmButtonText: "Login",
+      }).then(() => {
+        navigate("/login");
+      });
+    } else {
+      Swal.fire({
+        title: "Error!",
+        text: "Please correct the highlighted errors.",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
     }
   };
 

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../redux/UserAuthenticationReducer";
 import "./Login.css";
+import Swal from "sweetalert2";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -39,8 +40,14 @@ function Login() {
 
   useEffect(() => {
     if (currentUser) {
-      alert("Login Successful");
-      navigate("/add");
+      Swal.fire({
+        title: "Login Successful!",
+        text: "Welcome back!",
+        icon: "success",
+        confirmButtonText: "Proceed",
+      }).then(() => {
+        navigate("/add");
+      });
     }
   }, [currentUser, navigate]);
 
