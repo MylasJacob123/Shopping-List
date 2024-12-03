@@ -61,7 +61,7 @@ function Register() {
         icon: "success",
         confirmButtonText: "Login",
       }).then(() => {
-        navigate("/login");
+        navigate("/");
       });
     } else {
       Swal.fire({
@@ -74,7 +74,7 @@ function Register() {
   };
 
   const goToLogin = () => {
-    navigate("/login");
+    navigate("/");
   };
 
   return (
