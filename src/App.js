@@ -14,6 +14,7 @@ import {
   loadCurrentUserFromStorage,
 } from "./redux/UserAuthenticationReducer";
 import { setCurrentUserItems } from "./redux/ShoppingListReducer";
+import NotFound from "./components/notAPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -54,6 +55,7 @@ function App() {
             }
           />
           <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>
