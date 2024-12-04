@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../redux/UserAuthenticationReducer";
 import "./Navigation.css";
+import Swal from "sweetalert2";
 
 function Navigation() {
   const dispatch = useDispatch();
@@ -12,9 +13,22 @@ function Navigation() {
   );
 
   const handleLogout = () => {
-    dispatch(logoutUser());
-    navigate("/");
-  };
+    Swal.fire({
+    title: "Are you sure?",
+    text: "You will be logged out of your account.",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, log me out!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      dispatch(logoutUser());
+      navigate("/");
+      Swal.fire("Logged Out", "You have been successfully logged out.", "success");
+    }
+  });
+};
 
   return (
     <div className="navigation">

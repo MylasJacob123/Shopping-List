@@ -71,24 +71,24 @@ function AddShoppingListItem() {
     setOptionalNotes("");
   };
 
-  const handleShare = () => {
-    const lists = JSON.parse(localStorage.getItem("shoppingListItems")) || [];
-    if (!lists.length || !lists[0]?.items.length) {
-      Swal.fire("No items to share!", "Your shopping list is empty.", "info");
-      return;
-    }
+  // const handleShare = () => {
+  //   const lists = JSON.parse(localStorage.getItem("shoppingListItems")) || [];
+  //   if (!lists.length || !lists[0]?.items.length) {
+  //     Swal.fire("No items to share!", "Your shopping list is empty.", "info");
+  //     return;
+  //   }
 
-    const listItems = lists[0].items
-      .map(
-        (item) => `${item.name} (${item.quantity}): ${item.notes || "No notes"}`
-      )
-      .join("\n");
-    const subject = encodeURIComponent("My Shopping List");
-    const body = encodeURIComponent(
-      `Here's my shopping list:\n\n${listItems}\n\nShared via Shopping List App!`
-    );
-    window.open(`mailto:?subject=${subject}&body=${body}`, "_blank");
-  };
+  //   const listItems = lists[0].items
+  //     .map(
+  //       (item) => `${item.name} (${item.quantity}): ${item.notes || "No notes"}`
+  //     )
+  //     .join("\n");
+  //   const subject = encodeURIComponent("My Shopping List");
+  //   const body = encodeURIComponent(
+  //     `Here's my shopping list:\n\n${listItems}\n\nShared via Shopping List App!`
+  //   );
+  //   window.open(`mailto:?subject=${subject}&body=${body}`, "_blank");
+  // };
 
   const renderView = () => {
     switch (view) {
@@ -158,13 +158,13 @@ function AddShoppingListItem() {
               >
                 Add Item
               </button>
-              <button
+              {/* <button
                 className="share-button"
                 onClick={handleShare}
                 type="button"
               >
                 Share List
-              </button>
+              </button> */}
             </form>
           </div>
         );
