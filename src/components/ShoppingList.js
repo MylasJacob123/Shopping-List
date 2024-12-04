@@ -6,6 +6,7 @@ import {
   checkoutShoppingItem,
 } from "../redux/ShoppingListReducer";
 import "./ShoppingList.css";
+import Swal from "sweetalert2";
 
 function ShoppingList() {
   const shoppingList = useSelector(
@@ -38,6 +39,7 @@ function ShoppingList() {
   const update = (item) => {
     if (editId === item.id) {
       dispatch(updateShoppingItem({ id: item.id, ...newValue }));
+      Swal.fire("Success", "Item updated successfully!", "success");
       setEditId(null);
       setNewValue({});
     } else {
@@ -51,8 +53,30 @@ function ShoppingList() {
     }
   };
 
+  const deleteItem = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(deleteShoppingItem(id));
+        Swal.fire("Deleted!", "Your item has been deleted.", "success");
+      }
+    });
+  };
+
   const checkout = (id) => {
     dispatch(checkoutShoppingItem(id));
+    Swal.fire(
+      "Checked Out!",
+      "The item has been successfully checked out.",
+      "success"
+    );
   };
 
   return (
@@ -105,7 +129,7 @@ function ShoppingList() {
                   </button>
                   <button
                     className="delete-btn"
-                    onClick={() => dispatch(deleteShoppingItem(item.id))}
+                    onClick={() => deleteItem(item.id)}
                   >
                     Delete
                   </button>
